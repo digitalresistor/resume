@@ -43,11 +43,42 @@
 \cvitem{Databases}{PostgreSQL, MySQL (MariaDB), and SQLite 3}
 \cvitem{Networking}{Architected and built various highly available applications using industry standard platforms and processes. Proficient in designing and developing topologies using software defined networking and advanced routing protocols. IPv4/IPv6, DNS, HTTP, and routing/switching.}
 \cvitem{Security}{Cryptography primitives and fundamentals, including understanding and mitigating common pitfalls. Familiar building secure software, and addressing various security issues. Architecting secure network systems with defense in depth, understanding data flow, compartmentalising of data and building access policies.}
-\cvitem{OS}{FreeBSD, Mac OS X, Linux (Ubuntu, CentOS, Red Hat Enterprise Linux), OpenIndiana (Solaris), Microsoft Windows}
+\cvitem{Storage}{Familiar with traditional SAN/NAS solutions from NetApp (FC/FCoE/iSCSI) as well as object storage using Ceph Storage}
+\cvitem{OS}{FreeBSD, Mac OS X, Linux (Ubuntu, CentOS, Red Hat Enterprise Linux)}
 
 \section{Experience}
 \subsection{Professional}
-\cventry{2014--current}{Cross Domain Engineer}{Charter Communications}{Englewood}{CO}{
+\cventry{2015--current}{System Architect}{Centurylink, Inc}{Littleton}{CO}{
+\begin{itemize}
+\item Worked with a team to architect the next generation automation platform for video delivery
+	\begin{itemize}
+	\item Closely worked with the team to select an automation vendor best suited for our requirements
+	\item Led effort working with vendors to build appropriate hardware configurations for the new IaaS platform
+	\item Built requirements document with Canonical for the OpenStack/MaaS/JuJu platform
+	\item Documented network, physical layouts, and software requirements for next generation platform
+	\item Closely worked with other teams within the organisation to provide solutions that match their requirements (Platform as a Service, virtual machines, containers and others)
+	\end{itemize}
+\item Configured Juniper QFX/Arista switches to configure networks for Ceph/OpenStack
+\item Extensively stress tested and verified Ceph cluster storage would meet project requirements
+\item Built custom tooling in C++ for Ceph cluster throughput testing
+\item Automated installation of new server nodes using Metal as a Service
+\item Leveraged configuration management using SaltStack with salt-ssh to ease deployments of various projects
+\item Manage and deployed Jira, Confluence and Gitlab for internal developer tools
+\end{itemize}
+}
+
+\cventry{2012--2016}{Lead Software Engineer}{Tumble Inc}{Parker}{CO}{
+\begin{itemize}
+\item Lead generation and preparing quotes for proposals
+\item Understand client needs to define project scope and timeline of deliverables
+\item Develop custom software to meet client needs in C++ and Python
+\item Development of websites using Python (Pyramid Web Framework, Mako, SQLAlchemy) with PostgreSQL
+\item Built custom websites for data collection increasing customers visibility into their users requirements and helped customer more easily collate data
+\item Secured customer networks/data against intrusions by architecting a distributed system with strict separation of concerns
+\item Server administration work, migrating from old infrastructure to new infrastructure, including custom software to help migrate customer data
+\end{itemize}}
+
+\cventry{2014--2015}{Cross Domain Engineer}{Charter Communications}{Englewood}{CO}{
 \begin{itemize}
 \item Deployed, installed, and configured OpenStack using Red Hat Enterprise Linux 7
 \item Developed custom applications using OpenStack API's using Python and Pyramid
@@ -68,17 +99,6 @@
 \end{itemize}
 }
 
-\cventry{2012--current}{Lead Software Engineer}{Tumble Inc}{Parker}{CO}{
-\begin{itemize}
-\item Lead generation and preparing quotes for proposals
-\item Understand client needs to define project scope and timeline of deliverables
-\item Develop custom software to meet client needs in C++ and Python
-\item Development of websites using Python (Pyramid Web Framework, Mako, SQLAlchemy) with PostgreSQL
-\item Built custom websites for data collection increasing customers visibility into their users requirements and helped customer more easily collate data
-\item Secured customer networks/data against intrusions by architecting a distributed system with strict separation of concerns
-\item Server administration work, migrating from old infrastructure to new infrastructure, including custom software to help migrate customer data
-\end{itemize}}
-
 \cventry{2010--2014}{Sr. Software Engineer}{Absio Corporation}{Littleton}{CO}{
 \begin{itemize}
 \item Developed scalable, fault tolerant, and high availability systems using C++, Python, Postgres and ZeroMQ
@@ -98,40 +118,16 @@
 \end{itemize}
 }
 
-\subsection{Contract \& Short Term}
-\cventry{2009}{Internship/Website Developer}{AEC Consultants}{Phoenix}{AZ}{
-\begin{itemize}
-\item Built and designed a new website using PHP best practices (with Zend Framework)
-\item Designed and built MySQL database tables to store the data required (portfolio/existing projects and new request for proposals)
-\item Edited copy and designed the layout of various static pages
-\end{itemize}}
-
-\cventry{2007}{Security Auditor}{University of Advancing Technology}{Tempe}{AZ}{
-\begin{itemize}
-\item Conducted a general network security audit, and enumerated exploits on the internal student intranet websites
-\item Identified and documented flaws in running services on the computers on campus
-\item Analyzed and assessed the security of proprietary network protocols for various services
-\end{itemize}
-}
-
 \subsection{Volunteer}
 \cventry{2011--current}{Goon}{DEF CON}{Las Vegas}{NV}{
 \begin{itemize}
 \item Coordinated with other volunteers and hotel staff to outfit and run the event's contest area
-\item Built and maintained the Contest and Event websitew
+\item Built and maintained the Contest and Event website (2012--2014)
 \end{itemize}}
 
-\cventry{2008--2010}{Volunteer Worker}{Blackhat}{Las Vegas}{NV}{
-\begin{itemize}
-\item Coordinated with 40+ volunteers to organize and run the security conference
-\item Laid networking and power cables, set up classrooms
-\item Registered and directed attendees around the conference
-\end{itemize}
-}
-
 \section{Interests \& Projects}
-\cvitem{funcptr}{Technical notebook named funcptr (short for function pointer) at \url{http://funcptr.net/}. Includes technical tips and tricks as well as engineering challenges and solutions to help other users solve similar computing problems.}
-\cvitem{open source}{Extensive work with the \href{http://www.pylonsproject.org}{Pylons} Python web framework team on improving \href{https://github.com/Pylons/pyramid}{Pyramid}. I am currently the maintainer for \href{https://github.com/Pylons/pyramid\_mako}{pyramid\_mako} and \href{https://github.com/Pylons/webob}{WebOb}, and have released various pieces of code under open source licenses. Additional open source personal projects with on-going code commits available on \href{https://github.com/bertjwregeer}{Github/bertjwregeer}.}
+\cvitem{funcptr}{Technical notebook named funcptr (short for function pointer) at \url{http://funcptr.net/}. Includes documentation for solutions to problems I have encountered, with the hope of helping others solve similar problems more easily.}
+\cvitem{open source}{Extensive work with the \href{http://www.pylonsproject.org}{Pylons} Python web framework team on improving \href{https://github.com/Pylons/pyramid}{Pyramid}. I am currently the maintainer for \href{https://github.com/Pylons/webob}{WebOb} a very popular request/response library for Python, and have released various other projects under open source licenses. Additional open source personal projects with on-going code commits available on \href{https://github.com/bertjwregeer}{Github/bertjwregeer}.}
 \cvitem{}{Voting member of the Python Software Foundation}
 
 \section{Education}
