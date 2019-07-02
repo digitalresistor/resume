@@ -47,7 +47,7 @@
 \cvitem{OS}{FreeBSD, Mac OS X, Linux (Ubuntu, CentOS, Red Hat Enterprise Linux)}
 
 \section{Experience}
-\cventry{2016--current}{Team Lead Site Reliability Engineering}{Crunch.io (YouGov America Inc)}{San Francisco}{CA}{(Remote)}{
+\cventry{2016--current}{Site Reliability Engineering Team Lead}{Crunch.io (YouGov)}{San Francisco}{CA (remote)}{
 \begin{itemize}
 \item Led a six person team tasked with delivering a more stable and performant backend while increasing security and improving processes, as well as working on increasing developer productivity
 	\begin{itemize}
@@ -56,13 +56,15 @@
 	\item Led 1 on 1's with my team to better understand where they wanted to go in their careers, and what concerns they had about the company
 	\item Heavily involved in hiring and finding new people to join the Crunch team
 	\item Worked extensively with the support team to understand customer complaints
+	\item Helped prioritize and task firefighting responsibilities and was part of the front lines helping fix the service
 	\end{itemize}
-\item Primary security expert at Crunch helping build/improve the companies security posture, including applying security patches to Linux machines
-\item Using Docker containers and Jenkins (Jenkinsfile) built a CI pipeline that does per-branch builds increasing developer productivity
-\item Used ec2 spot instances with auto-scaling to allow Jenkins to spin up/down executors on demand to increase builds completed per hour
-\item Documentated and taught the team at Crunch about corporate security, implemented 2FA and SSO proxies to secure internal resources
+\item System administration with Ansible to deploy to AWS: EC2/Route53/S3
+\item Primary security expert at Crunch helping build/improve the company's security posture, including applying security patches to Linux machines, and building security into the development lifecycle
+\item Built a CI pipeline for Jenkins using docker that does per-branch builds increasing developer productivity by reducing contention on a single pipeline where tickets were merged together
+\item Used AWS EC2 spot instances with auto-scaling to allow Jenkins to spin up/down executors on demand reducing cost of development infrastructure by not paying for idle executors and increasing throughput for builds completed during peak hours due to parallelization of builds
+\item Documented and taught the team at Crunch about corporate security, implemented 2FA and SSO proxies to secure internal resources
 \item Actively contributed to the source code, including work to migrate from Python 2 to Python 3
-\item Open sourced various bits of software, as well as worked with upstream maintainers of open source used at Crunch
+\item Open sourced software for securing against SSRF, and to help run Selenium tests, as well as worked with upstream maintainers of open source used at Crunch
 \end{itemize}
 }
 
