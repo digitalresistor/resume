@@ -42,6 +42,7 @@ jobs:
                   name: Resume
             - name:
               run: |
+                  cp Resume/Resume*.pdf .
                   export RESUME_NAME=$(ls Resume*.pdf)
                   echo "::set-env name=RESUME_NAME::${RESUME_NAME}"
             - name: Upload the resume to the Github release
