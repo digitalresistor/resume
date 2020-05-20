@@ -39,42 +39,69 @@
 \makecvtitle
 
 \section{Skills}
-\cvitem{Languages}{Python (2.x and 3.x), C++, C}
+\cvitem{Languages}{Python (2.x and 3.x), C++, C, Rust}
 \cvitem{Databases}{PostgreSQL, MongoDB, Redis, MySQL (MariaDB), and SQLite 3}
 \cvitem{Networking}{Architected and built various highly available applications using industry standard platforms and processes. Proficient in designing and developing topologies using software defined networking and advanced routing protocols. IPv4/IPv6, DNS, HTTP, and routing/switching.}
 \cvitem{Security}{Cryptography primitives and fundamentals, including understanding and mitigating common pitfalls. Proficient building secure software, and addressing various security issues. Architecting secure network systems with defense in depth, understanding data flow, compartmentalising of data and building access policies.}
 \cvitem{Cloud}{Extensive experience using cloud providers, including AWS, GCP, Digital Ocean, and Linode}
-\cvitem{OS}{FreeBSD, Mac OS X, Linux (Ubuntu, CentOS, Red Hat Enterprise Linux)}
+\cvitem{OS}{FreeBSD, macOS, Linux (Ubuntu, CentOS, Red Hat Enterprise Linux)}
 
 \section{Experience}
-\cventry{2016--current}{Site Reliability Engineering Team Lead}{Crunch.io (YouGov)}{San Francisco}{CA (remote)}{
+\cventry{2018--current}{Pyramid/DevOps Consultant}{American Public Power Association}{Arlington}{VA (remote)}{
 \begin{itemize}
-\item Led a six person team tasked with delivering a more stable and performant backend while increasing security and improving processes, as well as working on increasing developer productivity
+\item Development of a custom user management web application for licensing and authorization using the Pyramid web framework for multiple oauth2 enabled services, as well as building a frontend using Bootstrap
+\item Code review and building test suites for code written in Python
+\item Database migrations using Alembic and SQLAlchemy deployed on PostgreSQL
+\item Introduced SaltStack and automation to deploying of VMs for running docker-compose based deployments
+\item Automation around deployment of development/staging/production environments using Github Actions
+\item Maintenance of existing systems running on Digital Ocean
+\end{itemize}
+}
+
+\cventry{2011--current}{Goon: Parties Lead}{DEF CON}{Las Vegas}{NV}{
+\begin{itemize}
+\item Coordinated with volunteers to run successful nighttime events at \href{https://www.defcon.org}{DEF CON}
+\item On-site: lead a small team of volunteers tasked with making sure the party planners have what they need to make their parties a success
+\item Work with DEF CON staff to ensure appropriate contracts/paperwork is provided
+\item Plan layout and location of parties and work closely with multiple other departments
+\end{itemize}}
+
+\cventry{2019--2020}{Senior Security Engineer on Offensive Security}{Cruise LLC}{San Francisco}{CA}{
+\begin{itemize}
+\item Automated and improved internally written Offensive Security software
+    \begin{itemize}
+    \item Introduced Github Actions to allow for easier cross platform building of offensive tooling
+    \item Built new functionality using C++ using Boost and Boost::Beast to increase malware capabilities
+    \end{itemize}
+\item Built a Slack bot that sent notifications for tickets in JIRA related to the Vulnerability Management program
+    \begin{itemize}
+    \item Deployed to AWS using Terraform, API gateway to Lambda, with CloudWatch cron triggers
+    \item Integration with Vault and AWS KMS for secret storage
+    \item Push-button deployment using Terraform Enterprise after building in CircleCI
+    \end{itemize}
+\item Helped shape decisions around Vulnerability Management and worked with various internal stakeholders to resolve security vulnerabilities that were found
+\item Extensively helped troubleshoot issues with work from home setups with my background in Linux/Docker helping users get productive while at home
+\item Worked with external parties to disclose vulnerabilities in their software
+\end{itemize}
+}
+
+\cventry{2016--2019}{Site Reliability Engineering Team Lead}{Crunch.io (YouGov)}{San Francisco}{CA (remote)}{
+\begin{itemize}
+\item Led a six person team tasked with delivering a more stable and performant back end while increasing security and improving processes, as well as working on increasing developer productivity
 	\begin{itemize}
 	\item Extensive project planning/management to plan for the quarter/year ahead
 	\item Reported directly to the C-suite related to on-going reliability issues, and stability concerns
-	\item Led 1 on 1's with my team to better understand where they wanted to go in their careers, and what concerns they had about the company
-	\item Heavily involved in hiring and finding new people to join the Crunch team
+	\item Led 1 on 1's with my team to better understand where they wanted to go in their careers
 	\item Worked extensively with the support team to understand customer complaints
 	\item Helped prioritize and task firefighting responsibilities and was part of the front lines helping fix the service
 	\end{itemize}
 \item System administration with Ansible to deploy to AWS: EC2/Route53/S3
 \item Primary security expert at Crunch helping build/improve the company's security posture, including applying security patches to Linux machines, and building security into the development lifecycle
-\item Built a CI pipeline for Jenkins using docker that does per-branch builds increasing developer productivity by reducing contention on a single pipeline where tickets were merged together
-\item Used AWS EC2 spot instances with auto-scaling to allow Jenkins to spin up/down executors on demand reducing cost of development infrastructure by not paying for idle executors and increasing throughput for builds completed during peak hours due to parallelization of builds
-\item Documented and taught the team at Crunch about corporate security, implemented 2FA and SSO proxies to secure internal resources
+\item Built a CI pipeline for Jenkins using docker that does per-branch builds increasing developer productivity
+\item Used AWS EC2 spot instances with auto-scaling to allow Jenkins to spin up/down executors on demand
+\item Documented and taught the team at Crunch about corporate security, implemented 2FA and SSO
 \item Actively contributed to the source code, including work to migrate from Python 2 to Python 3
-\item Open sourced software for securing against SSRF, and to help run Selenium tests, as well as worked with upstream maintainers of open source used at Crunch
-\end{itemize}
-}
-
-\cventry{2018--current}{Pyramid Consultant}{American Public Power Association}{Arlington}{VA (remote)}{
-\begin{itemize}
-\item Development of a custom user management web application for licensing and authorization using the Pyramid web framework for multiple oauth2 enabled services
-\item Database migrations using Alembic and SQLAlchemy deployed on PostgreSQL
-\item Introduced SaltStack and automation to deploying of VMs for running docker-compose based deployments
-\item Building automation for deployment of new containers based on git tags using Google Cloud Build
-\item Migrating from Digital Ocean to Google Cloud Platform with docker, ultimately moving to kubernetes
+\item Open sourced software for securing against SSRF, and to help run Selenium tests
 \end{itemize}
 }
 
@@ -90,8 +117,7 @@
 \item Configured Juniper QFX/Arista switches to configure networks for Ceph/OpenStack
 \item Extensively stress tested and verified Ceph cluster storage would meet project requirements
 \item Automated installation of new server nodes using Metal as a Service
-\item Leveraged configuration management using SaltStack with salt-ssh to ease deployments of various projects
-\item Manage and deployed Jira, Confluence and Gitlab for internal developer tools
+\item Managed and deployed Jira, Confluence and Gitlab for internal developer tools
 \end{itemize}
 }
 
@@ -106,29 +132,10 @@
 \end{itemize}
 }
 
-\cventry{2010--2014}{Sr. Software Engineer}{Absio Corporation}{Littleton}{CO}{
-\begin{itemize}
-\item Developed scalable, fault tolerant, and high availability systems using C++, Python, Postgres and ZeroMQ
-\item Architected software for deployment in a high security environment with separation of responsibilities
-\item Led small team and worked with other teams to implement features and requirements
-\item Drafted, designed, and helped implement all cryptographic decisions for Absio Message
-\item Successfully deployed to production for Absio's commercial beta launch
-\item Built various websites using Pyramid, SQLAlchemy, and Bourbon (SASS)
-\end{itemize}
-}
-
-\subsection{Volunteer}
-\cventry{2011--current}{Goon: Parties Lead}{DEF CON}{Las Vegas}{NV}{
-\begin{itemize}
-\item Coordinated with volunteers to run successful nighttime events at \href{https://www.defcon.org}{DEF CON}
-\item On-site: lead a small team of volunteers tasked with making sure the party planners have the resources necessary
-\item Work with hotel event management to make sure events run smoothly
-\end{itemize}}
-
 \section{Interests \& Projects}
 \cvitem{open source}{Core maintainer for the \href{http://www.pylonsproject.org}{Pylons Project}, specifically: \href{https://github.com/Pylons/webob}{WebOb} a very popular request/response library for Python, \href{https://github.com/pylons/waitress/}{Waitress} a pure Python HTTP server for WSGI applications, and \href{https://github.com/Pylons/pyramid}{Pyramid} a Python web framework. I also help manage pull requests, bug fixes and support other projects under the Pylons Project umbrella. I have released various other projects under open source licenses. Additional open source personal projects with on-going code commits available on \href{https://github.com/bertjwregeer}{Github/bertjwregeer}.}
-\cvitem{funcptr}{Technical notebook named funcptr (short for function pointer) at \url{http://funcptr.net/}. Includes documentation for solutions to problems I have encountered, with the hope of helping others solve similar problems more easily.}
 \cvitem{}{Voting member of the Python Software Foundation}
+\cvitem{funcptr}{Technical notebook named funcptr (short for function pointer) at \url{http://funcptr.net/}. Includes documentation for solutions to problems I have encountered, with the hope of helping others solve similar problems more easily.}
 
 \section{Education}
 \cventry{2006--2009}{Software Engineering}{University of Advancing Technology}{Tempe, AZ}{}{Bachelor of Science: Software Engineering \newline{Major: Computer Programming}}
