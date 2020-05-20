@@ -28,13 +28,14 @@ jobs:
         needs: build
         name: Publish the resume
         steps:
+            - uses: actions/checkout@v2
             - name: Download the Resume artifact
               uses: actions/download-artifact@v1
               with:
                   name: Resume
             - name: Rename the Resume to include the current date
               run: |
-                  export RESUME_NAME=Resume-$(date "+%Y-%m-%d").pdf
+                  export RESUME_NAME=Resume-$(date -d $(git log -1 --pretty="format:%cI" Resume.tex) "+%Y-%m-%d").pdf
                   mv Resume.pdf $RESUME_NAME
                   echo "::set-env name=RESUME_NAME::${RESUME_NAME}"
             - name: Upload the resume to the Github release
