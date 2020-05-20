@@ -10,6 +10,7 @@ on:
 
 jobs:
     build:
+        name: LaTeX to PDF
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -33,7 +34,7 @@ jobs:
         runs-on: ubuntu-latest
         if: github.event_name == 'release'
         needs: build
-        name: Publish the resume
+        name: Publish the Resume
         steps:
             - name: Download the Resume artifact
               uses: actions/download-artifact@v1
