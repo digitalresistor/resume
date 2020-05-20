@@ -17,26 +17,29 @@ jobs:
               run: docker build -t pdftex:latest - < Dockerfile
             - name: Build the resume
               run: docker run -v $(pwd):$(pwd) -w $(pwd) pdftex:latest pdftex -fmt=pdflatex ./Resume.tex
+            - name: Rename the Resume to include the current date
+              run: |
+                  export RESUME_NAME=Resume-$(date -d $(git log -1 --pretty="format:%cI" Resume.tex) "+%Y-%m-%d").pdf
+                  mv Resume.pdf $RESUME_NAME
+                  echo "::set-env name=RESUME_NAME::${RESUME_NAME}"
             - name: Upload artifacts
               uses: actions/upload-artifact@master
               with:
                   name: Resume
-                  path: Resume.pdf
+                  path: ${{ env.RESUME_NAME }}
     release:
         runs-on: ubuntu-latest
         if: github.event_name == 'release'
         needs: build
         name: Publish the resume
         steps:
-            - uses: actions/checkout@v2
             - name: Download the Resume artifact
               uses: actions/download-artifact@v1
               with:
                   name: Resume
-            - name: Rename the Resume to include the current date
+            - name:
               run: |
-                  export RESUME_NAME=Resume-$(date -d $(git log -1 --pretty="format:%cI" Resume.tex) "+%Y-%m-%d").pdf
-                  mv Resume.pdf $RESUME_NAME
+                  export RESUME_NAME=$(ls Resume*.pdf)
                   echo "::set-env name=RESUME_NAME::${RESUME_NAME}"
             - name: Upload the resume to the Github release
               uses: actions/upload-release-asset@v1
