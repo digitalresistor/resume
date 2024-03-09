@@ -24,7 +24,7 @@ jobs:
               run: |
                   export RESUME_NAME=Resume-$(date -d $(git log -1 --pretty="format:%cI" Resume.tex) "+%Y-%m-%d").pdf
                   mv Resume.pdf $RESUME_NAME
-                  echo "::set-env name=RESUME_NAME::${RESUME_NAME}"
+                  echo "RESUME_NAME=${RESUME_NAME}" >> "$GITHUB_ENV"
             - name: Upload artifacts
               uses: actions/upload-artifact@v4
               with:
@@ -43,7 +43,7 @@ jobs:
             - name: Set the resume name
               run: |
                   export RESUME_NAME=$(ls Resume*.pdf)
-                  echo "::set-env name=RESUME_NAME::${RESUME_NAME}"
+                  echo "RESUME_NAME=${RESUME_NAME}" >> "$GITHUB_ENV"
             - name: Upload the resume to the Github release
               uses: actions/upload-release-asset@v1
               env:
