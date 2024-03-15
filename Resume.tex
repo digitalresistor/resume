@@ -34,7 +34,29 @@
 Delta has the ability to quickly understand data flow and applications, helping solve challenging problems quickly and efficiently. Working across a range of operating systems, with various different technologies Delta has a wealth of knowledge and experience that allows them to get up to speed quickly. With a deep understanding of networking from routing/switching to application level TCP/UDP they can pinpoint the problem and resolve it. Proficient in multiple programming languages, with their favorites being Rust and Python, and having worked on software in C/C++, Golang, Groovy, Swift, PHP and Java
 
 \section{Experience}
-
+\cventry{2020--current}{Staff Engineer (DevSecOps)}{SAP: Sovereign Cloud/SAPNS2}{Reston}{VA (Remote)}{
+\begin{itemize}
+\item Functioned as the highest level of engineering escalation for five engineering teams
+\item Managing migration to IPv6 across the SAP portfolio for Sovereign Cloud, working closely with teams across SAP to plan, build, test, and certify the product portfolio for sovereign deployments
+\item Designed, deployed and maintained dual-stack IPv4/IPv6 production environment for engineering services (Gitlab, Gitlab runners, SSH, Single Sign On and more)
+\item Led, triaged, and resolved major outage over the holidays which included multiple Kubernetes clusters saving the business over a million of contractual losses due to downtime
+\item Championed the introduction of FIDO into the organization and evangelized the use of hardware 2FA tokens (Yubikey) and WebAuthN for protecting user accounts from phishing attacks
+\item Contributed heavily towards custom multi-cloud log ingestion capabilities to send logs to Splunk
+\item Designed and deployed containerized ElasticSearch/Kibana using telegraf for ingestion of metrics for operational monitoring across tens of customer deployments
+\item Developed automation to migrate five JIRA projects from self-hosted to Atlassian Cloud while reverse engineering required file format from error messages and failed migrations so that no historical data was lost
+\item Built a container scanning solution using Trivvy/Grype and collated data report to meet FedRAMP audit on two week deadline
+\item Architected and consulted on the design of internal PKI with Name Constraints to allow CA root to be trusted by customer IT departments to only sign for internal domains
+\item Worked closely with Microsoft engineers to develop solution to use Keycloak for SAML based Single Sign On to two Azure partitions: Commercial and Government
+\item Led staff engineering group and mentored/coached engineers across 15 engineering units
+\item Introduced Gitlab runners and automated linting/testing to large shared codebases in primary Gitlab deployment with over 600 users reducing manual code review
+\item Designed, developed, deployed, and maintained highly available single sign on solution in use across multiple different security boundaries (Keycloak)
+\item Automated highly resilient autoscaling egress transparent network filtering in use across AWS GovCloud, Azure and GCP using Squid with custom developed patches for required functionality
+\item Architected and built solution utilizing Route53 Hosted Zone to BIND conversion to host internal DNS servers for .mil DNS zones with DNSSEC using hidden primary with secondaries in private DOD IP space
+\item Developed custom software (Rust) to fetch GPG keys from an LDAP server and built Postfix mail filter to encrypt email sent to certain domains
+\item Engaged partner-vendors such as Red Hat and Microsoft on deep service-level issues and enhancements with vendors adopting the fixes
+\item Contributed countless issues/bugfixes to various open source projects, including: Vector (Rust), Telegraf (Golang), Cloud Custodian (Python), Cilium, AWS VPC CNI, Terraform and various Terraform providers, Kibana and more 
+\end{itemize}
+}
 
 \cventry{2011--2023}{Goon: Parties Lead}{DEF CON}{Las Vegas}{NV}{
 \begin{itemize}
