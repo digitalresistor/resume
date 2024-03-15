@@ -22,7 +22,7 @@ jobs:
               run: docker run -v $(pwd):$(pwd) -w $(pwd) pdftex:latest pdftex -fmt=pdflatex ./Resume.tex
             - name: Rename the Resume to include the current date
               run: |
-                  export RESUME_NAME=Resume-$(date -d $(git log -1 --pretty="format:%cI" Resume.tex) "+%Y-%m-%d").pdf
+                  export RESUME_NAME=DeltaRegeer-Resume-$(date -d $(git log -1 --pretty="format:%cI" Resume.tex) "+%Y-%m-%d").pdf
                   mv Resume.pdf $RESUME_NAME
                   echo "RESUME_NAME=${RESUME_NAME}" >> "$GITHUB_ENV"
             - name: Upload artifacts
@@ -42,7 +42,7 @@ jobs:
                   name: Resume
             - name: Set the resume name
               run: |
-                  export RESUME_NAME=$(ls Resume*.pdf)
+                  export RESUME_NAME=$(ls *Resume*.pdf)
                   echo "RESUME_NAME=${RESUME_NAME}" >> "$GITHUB_ENV"
             - name: Upload the resume to the Github release
               uses: actions/upload-release-asset@v1
