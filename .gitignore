@@ -2,3 +2,6 @@
 *.log
 *.out
 *.synctex.gz
+
+# Build artifact. The published copy is attached to a Github release by CI.
+Resume.pdf

@@ -1,0 +1,36 @@
+# Fast source checks on commit; the full build plus PDF text-layer validation
+# on push, because it needs a LaTeX run and is too slow per-commit.
+#
+# Install both hook types once:
+#     pre-commit install
+#
+# These hooks are a fast feedback loop, not a gate: `git commit --no-verify`
+# bypasses them. CI (.github/workflows/build.yml) is the authoritative check.
+
+default_install_hook_types: [pre-commit, pre-push]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: check-merge-conflict
+      - id: check-yaml
+
+  - repo: local
+    hooks:
+      - id: resume-lint
+        name: resume source lint
+        entry: python3 tools/resume_lint.py
+        language: system
+        files: ^(Resume\.tex|resume\.cls)$
+
+      - id: ats-check
+        name: build resume and validate its text layer
+        entry: make check
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
