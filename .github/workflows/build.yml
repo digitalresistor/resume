@@ -16,7 +16,7 @@ jobs:
         # still caught on the pull request.
         steps:
             - uses: actions/checkout@v6
-            - uses: actions/setup-python@v5
+            - uses: actions/setup-python@v7
               with:
                   python-version: '3.x'
             - run: pip install pre-commit
