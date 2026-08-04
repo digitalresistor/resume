@@ -15,8 +15,10 @@
   pdfsubject={Resume},
   pdfkeywords={DevSecOps, Site Reliability Engineering, Platform Engineering,
     Kubernetes, IPv6, AWS GovCloud, Azure, GCP, Terraform, Keycloak, SAML,
-    Single Sign On, FIDO, WebAuthn, PKI, FedRAMP, DNSSEC, Rust, Python, Go,
-    Linux, Gitlab CI, BIND, Squid, Postfix}
+    Single Sign On, OIDC, JWT, FIDO, WebAuthn, PKI, FedRAMP, DNSSEC, Vault,
+    Rust, Python, Go, Linux, Gitlab CI, OpenStack, PowerDNS, BIND,
+    incident response, observability, supply chain security, zero trust,
+    platform engineering, data residency, single tenancy}
 }
 
 \begin{document}
@@ -32,47 +34,50 @@
 }
 
 \resumeSection{Summary}
-Delta has the ability to quickly understand data flow and applications, helping
-solve challenging problems quickly and efficiently. Working across a range of
-operating systems, with various different technologies Delta has a wealth of
-knowledge and experience that allows them to get up to speed quickly. With a
-deep understanding of networking from routing/switching to application level
-TCP/UDP they can pinpoint the problem and resolve it. Proficient in multiple
-programming languages, with their favorites being Rust and Python, and having
-worked on software in C/C++, Golang, Groovy, Swift, PHP and Java.
+Delta is a staff-level DevSecOps engineer who works across the whole stack:
+writing the code, architecting the systems around it, and raising security
+posture throughout. On a sovereign cloud platform they root-cause the failures
+others escalate across identity, secrets management, PKI and CI/CD, and ship
+the permanent fix as code. A deep understanding of networking from
+routing/switching to application level TCP/UDP lets them pinpoint a problem and
+resolve it efficiently. Proficient in multiple programming languages, with
+their favorites being Rust and Python, and having worked on software in
+C/C++, Golang and Java.
 
-% Kept deliberately short. 44 of the 59 terms this section used to list already
-% appear in the Summary or in an Experience bullet, so listing them twice bought
-% nothing. What remains is the 15 terms that appear nowhere else, plus the
-% headline languages and platforms -- omitting those would read as broken to a
-% human even though a parser would still find them further down.
+% Content chosen by measured job-posting frequency, not by what we happen to do.
+% Terms that scored ~0% in senior infra postings (DNSSEC, FIDO2/WebAuthN,
+% Keycloak, OpenPGP, OpenVPN, SaltStack, FreeBSD) stay in the Experience
+% bullets, where a human still sees them, but no longer occupy Skills space.
 \resumeSection{Skills}
 \resumeLead{Languages} Rust, Python, Go, C/C++, Bash
-\resumeLead{Platforms} Kubernetes (EKS, Helm, Argo CD), Docker/Podman, Terraform/OpenTofu,
-Ansible, SaltStack
-\resumeLead{Security} PKI, DNSSEC, FIDO2/WebAuthN, SAML/OpenID Connect, Keycloak, OpenPGP,
-OpenVPN, FedRAMP
-\resumeLead{Systems} Linux (Ubuntu, RHEL), FreeBSD, macOS
+\resumeLead{Platforms} Kubernetes (EKS), Terraform/OpenTofu, Ansible, Helm,
+Docker/Podman, AWS, Azure, GCP, Linux
+\resumeLead{Security} Identity and access management, SSO, OIDC/SAML, PKI/mTLS,
+secrets management (Vault), supply chain security, zero trust, FedRAMP
+\resumeLead{Reliability} Incident response, root cause analysis, observability
+pipelines, data residency and single tenancy
 
 \resumeSection{Experience}
 
 \resumeEntry{Staff Engineer (DevSecOps)}
-            {SAP, Sovereign Cloud (team transferred from SAPNS2 in 2023)}
+            {SAP, Sovereign Cloud (team transferred from SAP NS2 in 2023)}
             {Reston, VA (Remote)}
             {2020 - Present}
 \begin{resumeItems}
 \item Functioned as the highest level of engineering escalation for five engineering teams, and led the staff engineering group, mentoring and coaching engineers across 15 engineering units
-\item Led, triaged, and resolved major outage over the holidays which included multiple Kubernetes clusters, saving the business over a million in contractual losses due to downtime
-\item Managing migration to IPv6 across the SAP portfolio for Sovereign Cloud, working closely with teams across SAP to plan, build, test, and certify the product portfolio; designed, deployed and maintained the dual-stack IPv4/IPv6 production environment for engineering services (Gitlab, SSH, Single Sign On and more)
-\item Designed, developed, deployed, and maintained highly available single sign on solution (Keycloak) in use across multiple security boundaries, working closely with Microsoft engineers on SAML based Single Sign On to two Azure partitions: Commercial and Government
-\item Championed the introduction of FIDO into the organization and evangelized the use of hardware 2FA tokens (Yubikey) and WebAuthN for protecting user accounts from phishing attacks
-\item Built a container scanning solution using Trivy/Grype and collated data report to meet FedRAMP audit on two week deadline
-\item Architected and consulted on the design of internal PKI with Name Constraints to allow CA root to be trusted by customer IT departments to only sign for internal domains
-\item Architected and built solution utilizing Route53 Hosted Zone to BIND conversion to host internal DNS servers for .mil DNS zones with DNSSEC using hidden primary with secondaries in private DOD IP space
-\item Automated highly resilient autoscaling egress transparent network filtering in use across AWS GovCloud, Azure and GCP using Squid with custom developed patches for required functionality
-\item Developed custom software (Rust) to fetch GPG keys from an LDAP server and built Postfix mail filter to encrypt email sent to certain domains
-\item Introduced Gitlab runners and automated linting/testing to large shared codebases in primary Gitlab deployment with over 600 users reducing manual code review
-\item Contributed countless issues/bugfixes to various open source projects, including: Vector (Rust), Telegraf (Golang), Cloud Custodian (Python), Cilium, AWS VPC CNI, Terraform and various Terraform providers, Kibana and more
+\item Led incident response, triage and resolution on a major outage over the holidays which included multiple Kubernetes clusters, saving the business over a million in contractual losses due to downtime
+\item Managing migration to IPv6 across the SAP portfolio for Sovereign Cloud, working closely with teams across SAP to plan, build, test, and certify the product portfolio; designed, deployed and maintained the dual-stack IPv4/IPv6 production environment for engineering services
+\item Built Python automation to stand up sovereign deployments on SAP Cloud Infrastructure, SAP's OpenStack-based platform, taking a region from zero to operational: OpenStack projects and networking, SSH bastions, VPN, Gitlab, Concourse, Gitlab runners and Helm charts, with Keycloak for federated single sign on, and pipelines mirroring code from a central distribution point into the in-boundary Gitlab
+\item Triage, stage, validate and ship fixes across multiple sovereign deployments spanning AWS commercial, GovCloud (US) and European Sovereign Cloud regions with networked Azure and GCP extensions, each operated so it can be cut from the internet and keep running standalone
+\item Work with product teams across SAP to get their services running in sovereign environments, building the deployment automation and root-causing the platform issues blocking them, so customer data meets residency and single-tenancy requirements instead of landing in public clouds
+\item Designed, developed, deployed and maintained a highly available single sign on solution (Keycloak) across multiple security boundaries, working with Microsoft engineers on SAML based Single Sign On to two Azure partitions: Commercial and Government
+\item Championed FIDO adoption across the organization, evangelizing hardware 2FA tokens (Yubikey) and WebAuthN against phishing, and modernized CI to Git authentication, replacing static deploy keys and long-lived tokens with short-lived JWT/OIDC identities and scoped service accounts with automated rotation
+\item Architected internal PKI with Name Constraints so a CA root could be trusted by customer IT departments to sign only for internal domains, and cross-cluster Vault transit auto-unseal letting one security domain unseal another with no static keys
+\item Built a container scanning solution using Trivy/Grype for supply chain security to meet a FedRAMP audit on a two week deadline; support audit remediation across FedRAMP and German BSI frameworks (IT-Grundschutz, VS-NfD, C5)
+\item Built and operated an authoritative DNS platform on PowerDNS, and built guardrails into the Terraform managing Route53 so a zone delegation cannot be left dangling and open to subdomain takeover; previously converted Route53 Hosted Zones to BIND for internal .mil DNS zones with DNSSEC, using a hidden primary with secondaries in private DOD IP space
+\item Introduced Gitlab runners and automated linting/testing to large shared codebases in primary Gitlab deployment with over 600 users, building out the internal developer platform the org ships through, then root-caused its largest source of CI flakiness across four layers of the stack, Gitlab Runner, Kubernetes CSR signing, the EKS AMI and the cluster autoscaler
+\item Maintainer of the shared infrastructure-as-code fleet across dozens of repositories: roughly 50 Terraform modules, 40 Ansible roles and playbooks, Helm charts and supporting Python packages; drove a monorepo-wide cloud provider major upgrade, and review code across Ansible, Terraform, Helm, Python, Golang and Rust
+\item Contributed upstream fixes to the Rust observability and infrastructure tooling running in production: Azure Blob Storage endpoint override in Vector, needed because Azure Government uses different endpoints, and its SensitiveString connection string handling, then the underlying connection string parsing in the Azure SDK for Rust; also saml2aws for the AWS GovCloud URN and IPv4/IPv6 dual mode HAProxy in the redis-ha Helm chart
 \end{resumeItems}
 
 \resumeEntry{Software/DevOps Consultant}
@@ -92,17 +97,8 @@ OpenVPN, FedRAMP
             {San Francisco, CA}
             {2019 - 2020}
 \begin{resumeItems}
-\item Automated and improved internally written Offensive Security software
-  \begin{resumeSubItems}
-  \item Introduced Github Actions to allow for easier cross platform building of offensive tooling
-  \item Built new functionality using C++ using Boost and Boost::Beast to increase malware capabilities
-  \end{resumeSubItems}
-\item Built a Slack bot that sent notifications for tickets in JIRA related to the Vulnerability Management program
-  \begin{resumeSubItems}
-  \item Deployed to AWS using Terraform, API gateway to Lambda, with CloudWatch cron triggers
-  \item Integration with Vault and AWS KMS for secret storage
-  \item Push-button deployment using Terraform Enterprise after building in CircleCI
-  \end{resumeSubItems}
+\item Automated and improved internally written Offensive Security software, introducing Github Actions for cross platform builds of offensive tooling and building new functionality in C++ with Boost and Boost::Beast to increase malware capabilities
+\item Built a Slack bot that sent notifications for tickets in JIRA related to the Vulnerability Management program, deployed to AWS using Terraform with API gateway to Lambda and CloudWatch cron triggers, integrating Vault and AWS KMS for secret storage and shipped through CircleCI
 \item Helped shape decisions around Vulnerability Management and worked with various internal stakeholders to resolve security vulnerabilities that were found
 \item Worked with external parties to disclose vulnerabilities in their software
 \end{resumeItems}
@@ -112,45 +108,21 @@ OpenVPN, FedRAMP
             {San Francisco, CA (Remote)}
             {2016 - 2019}
 \begin{resumeItems}
-\item Led a six person team tasked with delivering a more stable and performant back end while increasing security and improving processes, as well as working on increasing developer productivity
-  \begin{resumeSubItems}
-  \item Extensive project planning/management to plan for the quarter/year ahead
-  \item Reported directly to the C-suite related to on-going reliability issues, and stability concerns
-  \item Led 1 on 1's with my team to better understand where they wanted to go in their careers
-  \item Prioritized, and managed firefighting responsibilities and was part of the front lines helping fix the service
-  \end{resumeSubItems}
+\item Led a six person team tasked with delivering a more stable and performant back end while increasing security and improving processes, reporting directly to the C-suite on reliability and stability concerns while running quarterly planning, career development and firefighting priorities
 \item Migrated the codebase from Python 2 to Python 3, and introduced modern best practices
 \item Primary security expert at Crunch helping build/improve the company's security posture, including applying security patches to Linux machines, and building security into the development lifecycle, introducing 2FA and SSO to reduce attack surface for corporate assets
 \item Built a CI pipeline for Jenkins to enable per-branch builds, increasing developer productivity with EC2 autoscaling
 \end{resumeItems}
 
-\resumeEntry{System Architect}
-            {Centurylink, Inc}
-            {Littleton, CO}
-            {2015 - 2016}
-\begin{resumeItems}
-\item Worked with a team to architect the next generation automation platform for video delivery
-  \begin{resumeSubItems}
-  \item Led effort working with vendors to build appropriate hardware configurations for the new IaaS platform
-  \item Built requirements document with Canonical for the OpenStack/MaaS/JuJu platform
-  \item Documented network, physical layouts, and software requirements for next generation platform
-  \end{resumeSubItems}
-\item Configured Juniper QFX/Arista switches to configure networks for Ceph/OpenStack
-\item Extensively stress tested and verified Ceph cluster storage would meet project requirements
-\item Automated installation of new server nodes using Canonical's MaaS (Metal as a Service)
-\item Managed and deployed JIRA, Confluence and Gitlab for internal developer tools
-\end{resumeItems}
-
 \resumeSection{Projects}
 \resumeLead{Open Source} Core maintainer for the
-\href{https://pylonsproject.org}{Pylons Project}, specifically:
-\href{https://github.com/Pylons/webob}{WebOb} a very popular request/response
-library for Python, \href{https://github.com/Pylons/waitress}{Waitress} a pure
-Python HTTP server for WSGI applications, and
-\href{https://github.com/Pylons/pyramid}{Pyramid} a Python web framework. I
-also help manage security reports, pull requests, bug fixes under the Pylons
-Project umbrella. Additional open source personal projects with on-going code
-commits available on
+\href{https://pylonsproject.org}{Pylons Project}:
+\href{https://github.com/Pylons/webob}{WebOb}, a widely used request/response
+library for Python; \href{https://github.com/Pylons/waitress}{Waitress}, a pure
+Python HTTP server for WSGI applications; and
+\href{https://github.com/Pylons/pyramid}{Pyramid}, a Python web framework. Also
+manage security reports, pull requests and bug fixes under the Pylons Project
+umbrella, with further open source work on
 \href{https://github.com/digitalresistor}{Github/digitalresistor}.
 \resumeLead{DEF CON} I ran a department at DEF CON for managing night time
 events for a couple of years, with a total of thirteen years working as a Goon

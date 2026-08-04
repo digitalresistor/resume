@@ -43,7 +43,7 @@ SPINE = [
     "Delta Regeer",
     "delta@regeer.org",
     "SUMMARY",
-    "Delta has the ability to quickly understand data flow",
+    "staff-level DevSecOps engineer",
     "SKILLS",
     "EXPERIENCE",
     "Staff Engineer (DevSecOps)",
@@ -57,8 +57,6 @@ SPINE = [
     "Offensive Security software",
     "Site Reliability Engineering Team Lead",
     "Crunch.io",
-    "System Architect",
-    "Centurylink",
     "PROJECTS",
     "Pylons Project",
     "DEF CON",
@@ -73,7 +71,6 @@ ADJACENT = [
     ("Software/DevOps Consultant", "2018 - 2020"),
     ("Senior Security Engineer, Offensive Security", "2019 - 2020"),
     ("Site Reliability Engineering Team Lead", "2016 - 2019"),
-    ("System Architect", "2015 - 2016"),
     ("Bachelor of Science, Software Engineering", "2006 - 2009"),
 ]
 ADJACENT_MAX_CHARS = 240
@@ -81,15 +78,15 @@ ADJACENT_MAX_CHARS = 240
 # Words carrying fi/ffi/fl ligatures.  If the ToUnicode CMap is wrong these
 # are exactly what corrupts -- "efficiently" became "efIciently" in the
 # moderncv build.
-LIGATURE_WORDS = ["efficiently", "Proficient", "certify", "firefighting", "configurations"]
+LIGATURE_WORDS = ["efficiently", "Proficient", "certify", "notifications", "flakiness"]
 
 # Technology keywords an ATS would match on.  Also a regression net: if a
 # future edit drops one of these, CI says so.
 KEYWORDS = [
     "Rust", "Python", "Golang", "Kubernetes", "Terraform", "Keycloak",
-    "PostgreSQL", "OpenStack", "SaltStack", "FedRAMP",
-    "DNSSEC", "WebAuthn", "IPv6", "Squid", "Trivy", "Grype",
-    "SAML", "Jenkins",
+    "PostgreSQL", "OpenStack", "SaltStack", "FedRAMP", "Vault", "OIDC",
+    "DNSSEC", "WebAuthn", "IPv6", "PowerDNS", "Ansible", "Helm",
+    "Trivy", "Grype", "SAML", "Jenkins", "observability",
 ]
 
 # Everything the extracted text may contain.  An allowlist, not a blocklist:
