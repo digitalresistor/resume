@@ -1,0 +1,16 @@
+# Canonical author identity for this repository.
+#
+# Each line maps a *commit email* to the correct name and email. Matching on
+# the email alone is deliberate: it rewrites the name on every commit that used
+# that address, so no previous name needs to be recorded in this file.
+#
+# The canonical address is xistence@0x58.com rather than the one on the resume,
+# because that is the address carried as a UID on the GPG signing key. Commits
+# signed under an address the key does not cover show up as Unverified.
+#
+# Note this only affects how git itself renders history -- git log, shortlog,
+# blame, and anything built on them. The commit objects are unchanged, and
+# GitHub's web interface does not read .mailmap.
+
+Delta Regeer <xistence@0x58.com> <bertjw@regeer.org>
+Delta Regeer <xistence@0x58.com> <xistence@0x58.com>
