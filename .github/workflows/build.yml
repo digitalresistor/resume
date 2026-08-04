@@ -15,7 +15,7 @@ jobs:
         # Parity with .pre-commit-config.yaml, so a `--no-verify` commit is
         # still caught on the pull request.
         steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@v7
             - uses: actions/setup-python@v5
               with:
                   python-version: '3.x'
